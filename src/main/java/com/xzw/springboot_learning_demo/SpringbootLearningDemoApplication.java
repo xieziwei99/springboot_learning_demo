@@ -11,6 +11,6 @@ public class SpringbootLearningDemoApplication {
         new SpringApplication(SpringbootLearningDemoApplication.class).setAddCommandLineProperties(false);
         // 主程序运行
         SpringApplication.run(SpringbootLearningDemoApplication.class, args);
-    }
+        }
 
-}
+        }
