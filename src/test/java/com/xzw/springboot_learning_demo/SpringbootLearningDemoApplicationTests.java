@@ -8,6 +8,8 @@ import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.junit4.SpringRunner;
+import org.springframework.ui.ModelMap;
+
 import static org.junit.Assert.assertEquals;
 
 @RunWith(SpringRunner.class)
@@ -18,8 +20,8 @@ public class SpringbootLearningDemoApplicationTests {
     BlogProperties blogProperties;
 
     @Test
-    public void testSayHello() {
-        assertEquals("Hello World!", new HelloController().sayHello());
+    public void testSayHello(ModelMap map) {
+        assertEquals("hello", new HelloController().sayHello(map));
     }
 
     @Test

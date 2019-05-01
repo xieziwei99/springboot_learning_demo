@@ -1,12 +1,14 @@
 package com.xzw.springboot_learning_demo.web;
 
+import org.springframework.stereotype.Controller;
+import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
 
-@RestController
+@Controller
 public class HelloController {
     @RequestMapping("/hello")
-    public String sayHello() {
-        return "Hello World!";
+    public String sayHello(ModelMap map) {
+        map.addAttribute("name", "Hello Jack Xie");
+        return "hello";
     }
 }
