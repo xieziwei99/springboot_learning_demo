@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>一些thymeleaf用法</title>
+    <link rel="stylesheet" type="text/css" href="../static/style.css" th:href="@{/style.css}">
+    <script src="../static/thymeleaf.js" th:src="@{/thymeleaf.js}"></script>
+</head>
+<body>
+<div class="showing">
+    <h2>转义与非转义的HTML文本</h2>
+    <p th:text="${content}"></p>    <!-- 这个显示为纯文本 -->
+    <p th:utext="${content}"></p>   <!-- 这个显示为红色文本 -->
+    <hr>
+    <h2>显示对象及对象属性</h2>
+    <p th:text="${product}"></p>
+    <p th:text="${product.id}"></p>
+    <p th:text="${product.getName()}"></p>
+    <p th:text="${product.getPrice() + 999}"></p>
+    <hr>
+    <h2>条件判断</h2>
+    <p th:if="${boo}">boo is true</p>
+    <p th:if="${not boo}">这句话不显示</p>
+    <p th:unless="${boo}">boo is false（这句话不显示）</p>
+    <p th:text="${boo} ? 'boo is true' : 'boo is false'"></p>
+</div>
+<div class="showing" th:object="${product}">
+    <h2>用*{}的方式显示对象属性</h2>
+    <p th:text="|*{id} *{name} *{getPrice()}|"></p>
+</div>
+<div class="showing">
+    <h2>thymeleaf内置工具之格式化日期</h2>
+    <p th:text="|直接输出: ${date}|"></p>
+    <p th:text="|默认格式化: ${#dates.format(date)}|"></p>
+    <p th:text="|自定义格式化: ${#dates.format(date, 'yyyy-MM-dd HH:mm:ss')}|"></p>
+</div>
+<div class="showing" style="background-color: lightgray;">
+    <div th:replace="included::footer1"></div>
+    <div th:replace="included::footer2('2019年5月4日')"></div>
+</div>
+</body>
+</html>

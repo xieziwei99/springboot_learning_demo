@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Products</title>
+    <link rel="stylesheet" type="text/css" href="../static/table.css" th:href="@{/table.css}">
+    <link rel="stylesheet" type="text/css" href="../static/style.css" th:href="@{/style.css}">
+</head>
+<body>
+<div class="showing">
+    <h2>遍历</h2>
+    <table class="t1" width="360px;">
+        <thead>
+        <tr>
+            <th>id</th><th>产品名称</th><th>价格</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr th:each="p: ${products}">
+            <td th:text="${p.id}"></td>
+            <td th:text="${p.name}"></td>
+            <td th:text="${p.price}"></td>
+        </tr>
+        </tbody>
+    </table>
+</div>
+<div class="showing">
+    <h2>带状态的遍历</h2>
+    <table class="t1" width="100%;">
+        <thead>
+        <tr>
+            <th>index</th>
+            <th>count</th>
+            <th>size</th>
+            <th>当前对象</th>
+            <th>奇（/偶）数行</th>
+            <th>是否第一行</th>
+            <th>是否最后一行</th>
+            <th>id</th>
+            <th>产品名称</th>
+            <th>价格</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr th:each="p, status: ${products}">
+            <td th:text="${status.index}"></td>
+            <td th:text="${status.count}"></td>
+            <td th:text="${status.size}"></td>
+            <td th:text="${status.current}"></td>
+            <td th:text="${status.even} ? '奇' : '偶'"></td>
+            <td th:text="${status.first}? '是' : '否'"></td>
+            <td th:text="${status.last}? '是' : '否'"></td>
+            <td th:text="${p.id}"></td>
+            <td th:text="${p.name}"></td>
+            <td th:text="${p.price}"></td>
+        </tr>
+        </tbody>
+    </table>
+</div>
+</body>
+</html>

@@ -1,0 +1,13 @@
+div.showing {
+    width: 80%;
+    margin: 20px auto;
+    border: 1px gray solid;
+    padding: 30px;
+}
+
+.even {
+    background-color: gray;
+}
+.odd {
+    background-color: aquamarine;
+}

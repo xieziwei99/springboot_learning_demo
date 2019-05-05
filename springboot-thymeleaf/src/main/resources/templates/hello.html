@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>hello</title>
+    <link rel="stylesheet" type="text/css" href="../static/style.css" th:href="@{/style.css}">
+    <script src="../static/thymeleaf.js" th:src="@{/thymeleaf.js}"></script>
+</head>
+<body>
+<div class="showing">
+    <p th:text="${name}" style="color: #ff40f8;font: normal bolder 24px Arial;">name</p>
+    <p th:text="'hello ' + ${name}">hello world</p>
+    <p th:text="|hello ${name}|">hello world</p>
+</div>
+<script>
+    testFunc();
+</script>
+</body>
+</html>

@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>被test.html包含的文件</title>
+</head>
+<body>
+<footer th:fragment="footer1">
+    <p>此页面由〇玖所写</p>
+</footer>
+<footer th:fragment="footer2(date)">
+    <p th:text="|此页面写于${date}|"></p>
+</footer>
+</body>
+</html>
