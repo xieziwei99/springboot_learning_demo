@@ -7,6 +7,7 @@ import org.springframework.web.bind.annotation.ResponseBody;
 
 @Controller
 public class HelloController {
+
     @RequestMapping("/hello")
     public String sayHello(ModelMap map) {
         map.addAttribute("name", "Hello Jack Xie");
