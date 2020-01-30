@@ -1,0 +1,19 @@
+GET http://localhost:8080/city?desc=家 的
+Accept: application/json
+
+###
+GET http://localhost:8080/city/4
+Accept: application/json
+
+###
+POST http://localhost:8080/city
+Content-Type: application/json
+
+{
+  "id": 8,
+  "provinceId": 433325,
+  "cityName": "荆州",
+  "description": "关羽大意失荆州的荆州"
+}
+
+###
