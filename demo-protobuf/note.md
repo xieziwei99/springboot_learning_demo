@@ -1,0 +1,2 @@
+- 编写 .proto 文件后，运行 `proto --java_out=./ user.proto` 生成 java 文件
+- proto 命令可通过 homebrew 安装
