@@ -12,6 +12,7 @@ import org.springframework.stereotype.Component;
 import lombok.extern.slf4j.Slf4j;
 
 /**
+ * kafka 使用示例，需要本地安装并启动 kafka，使用 SpringBoot 无需其他配置
  * @author xieziwei <xieziwei@kuaishou.com>
  * Created on 2021-07-08
  */
